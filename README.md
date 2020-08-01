@@ -1,6 +1,6 @@
 # sekret
 
-##server secrets management
+## server secrets management
 
 Store and retrieve secrets and application credentials securely, using a known environmment variable which holds the symmetric key.
 
