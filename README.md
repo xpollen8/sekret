@@ -21,18 +21,8 @@ export YOUR_APPS_SECRETS="super secret key string"
 ## to encrypt secrets
 
 ```
-const encryptedSecretsFile = './secrets.encrypted'; // change to suit
 const Secrets = require('sekret');
-const encrypted = new Secrets(process.env.YOUR_APPS_SECRETS).encrypt(encryptedSecretsFile);
-console.log("Secrets are", decrypted);
-```
-
-Then, configure you
-
-## to decrypt secrets
-
-```
-const encryptedSecretsFile = './secrets.encrypted'; // change to suit
+const encryptedSecretsFile = './secrets.encrypted'; // defaults to this
 const secretsToEncrypt = {
 	database: {
 		hostname: '',
@@ -45,8 +35,16 @@ const secretsToEncrypt = {
 	},
 };
 
-const Secrets = require('sekret');
-const decrypted = new Secrets(process.env.YOUR_APPS_SECRETS).decrypt(secretsToEncrypt, encryptedSecretsFile);
+const encrypted = new Secrets(process.env.YOUR_APPS_SECRETS[, encryptedSecretsFile]).encrypt(secretsToEncrypt);
+console.log("Secrets are", encrypted);
+```
 
+## to decrypt secrets
+
+```
+const Secrets = require('sekret');
+const encryptedSecretsFile = './secrets.encrypted'; // defaults to this
+
+const decrypted = new Secrets(process.env.YOUR_APPS_SECRETS[, encryptedSecretsFile]).decrypt();
 console.log("Secrets are", decrypted);
 ```
