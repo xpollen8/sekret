@@ -4,6 +4,12 @@
 
 Store and retrieve secrets and application credentials securely, using a known environmment variable which holds the symmetric key.
 
+# Install
+
+```
+npm i --save https://github.com/xpollen8/sekret
+```
+
 # Usage
 
 First, set the secret key for your application into environment.
@@ -15,7 +21,7 @@ export YOUR_APPS_SECRETS="super secret key string"
 ## to encrypt secrets
 
 ```
-const encryptedSecretsFile = './secrets.encrypted'; // change to suite
+const encryptedSecretsFile = './secrets.encrypted'; // change to suit
 const Secrets = require('sekret');
 const encrypted = new Secrets(process.env.YOUR_APPS_SECRETS).encrypt(encryptedSecretsFile);
 console.log("Secrets are", decrypted);
@@ -26,7 +32,7 @@ Then, configure you
 ## to decrypt secrets
 
 ```
-const encryptedSecretsFile = './secrets.encrypted'; // change to suite
+const encryptedSecretsFile = './secrets.encrypted'; // change to suit
 const secretsToEncrypt = {
 	database: {
 		hostname: '',
